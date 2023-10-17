@@ -1,0 +1,10 @@
+{
+    "ABC": {
+        "username": "username1",
+        "password": "password123"
+    },
+    "DEF": {
+        "username": "username2",
+        "password": "password321"
+    }
+}
