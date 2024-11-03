@@ -1,7 +1,8 @@
 # Introduction
+
 `oraclemanager` is a wrapper around [python-oracledb](https://oracle.github.io/python-oracledb/) designed to simplify repetitive database actions. It deliberately omits much of the advanced functionality of the core library in favor of a stripped down API focused on connecting, querying, commiting changes, and performing basic result transformations.
 
-`oraclemanager` is ideal for applications that involve a high volume of reptitive and basic database actions. If your applications require multiple concurrent database connections, advanced scripting/querying, or high efficiency, consider using the `python-oracledb` library and API directly.
+`oraclemanager` is ideal for applications that involve a high volume of repetitive and basic database actions. If your applications require multiple concurrent database connections, advanced scripting/querying, or high efficiency, consider using the `python-oracledb` library and API directly.
 
 # Installation
 
