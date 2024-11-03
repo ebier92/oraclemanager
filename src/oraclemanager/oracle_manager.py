@@ -33,11 +33,11 @@ class OracleManager:
         """Initializes a new instance of the `OracleManager` class.
 
         Args:
-            connection_config (ConnectionConfig | None, optional): A `ConnectionConfig` object that stores DB credentials. Defaults to None.
-            connection_config_file_path (str | None, optional): A file path to a file holding a `ConnectionConfig` object in JSON format.
+            connection_config: A `ConnectionConfig` object that stores DB credentials. Defaults to None.
+            connection_config_file_path: A file path to a file holding a `ConnectionConfig` object in JSON format.
                 Can be loaded in place of providing a value for the `connection_config` argument. Defaults to None.
-            string_formatting_options (StringFormattingOptions | None, optional): A dict containing formatting options to be used if query
-                results are converted to strings. Defaults to None.
+            string_formatting_options: A dict containing formatting options to be used if query results are
+                converted to strings. Defaults to None.
         """
 
         if connection_config_file_path and not connection_config:
@@ -74,7 +74,7 @@ class OracleManager:
         """Returns raw query results if available.
 
         Returns:
-            list[tuple[Any, ...]] | None: Raw query results.
+            Raw query results.
         """
 
         return self._query_result.raw
@@ -85,7 +85,7 @@ class OracleManager:
         `string_formatting_options` property.
 
         Returns:
-            list[tuple[str, ...]] | None: Raw query results with data elements converted to strings.
+            Raw query results with data elements converted to strings.
         """
 
         if self._query_result.as_strings:
@@ -120,7 +120,7 @@ class OracleManager:
         """Returns raw query result rows in `OrderedDict` format if results are available.
 
         Returns:
-            list[OrderedDict[str, Any]] | None: Raw query results with rows converted to `OrderedDict`s.
+            Raw query results with rows converted to `OrderedDict`s.
         """
 
         if self._query_result.as_dicts:
@@ -144,7 +144,7 @@ class OracleManager:
         """Returns the column names of the current query results if available.
 
         Returns:
-            tuple[str, ...] | None: A tuple of column headers.
+            A tuple of column headers.
         """
 
         if self.cursor:
@@ -158,7 +158,7 @@ class OracleManager:
         """Loads validated content from a JSON file path as a `ConnnectionConfig` object.
 
         Args:
-            connection_config_file_path (str): The file path to load.
+            connection_config_file_path: The file path to load.
 
         Raises:
             TypeError: If the loaded file content can not be validated as a `ConnectionConfig` object.
@@ -185,13 +185,13 @@ class OracleManager:
         """Establishes a connection to a specified Oracle database.
 
         Args:
-            sid (str | None, optional): The SID of the database. If the SID is included in the `connection_config`, no other arguments
+            sid: The SID of the database. If the SID is included in the `connection_config`, no other arguments
                 are needed. Defaults to None.
-            username (str | None, optional): The username of the database profile to use to connect. This argument can be passed with a
+            username: The username of the database profile to use to connect. This argument can be passed with a
                 `sid` and `password` to manually connect to a database using the EZConnect string format. Defaults to None.
-            password (str | None, optional): The password of the database profile to usee to connect. This argument can be passed with a
+            password: The password of the database profile to usee to connect. This argument can be passed with a
                 `sid` and `username` to manually connect to a database using the EZConnect string format. Defaults to None.
-            connection_params (ConnectParams | None, optional): A connection params object. Can be used to manually connect to a database
+            connection_params: A connection params object. Can be used to manually connect to a database
                 if the `connection_config` object or an EZConnect string cannot be used. Defaults to None.
 
         Raises:
@@ -249,8 +249,8 @@ class OracleManager:
         """Executes a SQL statement with specified params.
 
         Args:
-            sql (str): A SQL statement to execute.
-            params (list[Any] | tuple[Any, ...] | dict[str, Any] | None, optional): SQL statement param values. Defaults to None.
+            sql: A SQL statement to execute.
+            params: SQL statement param values. Defaults to None.
 
         Raises:
             RuntimeError: If no database connection has been established, or if there was an error executing SQL.
