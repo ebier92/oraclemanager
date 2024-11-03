@@ -17,7 +17,7 @@ classifiers = [
   "Operating System :: OS Independent",
 ]
 dependencies = [
-  "oracledb==1.4.2"
+  "oracledb==2.4.1"
 ]
 
 [project.urls]
